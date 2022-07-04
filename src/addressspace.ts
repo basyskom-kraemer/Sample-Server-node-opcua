@@ -21,6 +21,7 @@ import { green } from './utils/log';
 import { createOwnServerAddressspaceLogic } from './serveraddressspace/serveraddressspace';
 import { createMyMachineLogic } from './machines/mymachine/mymachine';
 import { createShowCaseMachineToolLogic } from './machines/machinetool/showcasemachinetool';
+import { createMachineToolExampleLogic } from './machines/machinetool/machinetool-example';
 import { createMotionDeviceSystemLogic } from './machines/motiondevicesystem/motiondevicesystem';
 import { createGenericPRLogic } from './machines/PlasticsRubber/generic';
 import { create40077Logic } from './machines/PlasticsRubber/40077';
@@ -32,6 +33,8 @@ import { create40082_3Logic } from './machines/PlasticsRubber/40082-3';
 import { create40084_9Logic } from './machines/PlasticsRubber/40084-9';
 import { create40084_11Logic } from './machines/PlasticsRubber/40084-11';
 
+
+
 export const createAddressSpace = async (server: OPCUAServer): Promise<void> => {
   const addressSpace = server.engine.addressSpace;
   addressSpace
@@ -39,6 +42,7 @@ export const createAddressSpace = async (server: OPCUAServer): Promise<void> => 
       createOwnServerAddressspaceLogic(addressSpace),
       createMyMachineLogic(addressSpace),
       createShowCaseMachineToolLogic(addressSpace),
+      createMachineToolExampleLogic(addressSpace),
       createMotionDeviceSystemLogic(addressSpace),
       createGenericPRLogic(addressSpace),
       create40077Logic(addressSpace),
