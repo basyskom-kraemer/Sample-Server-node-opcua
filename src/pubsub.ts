@@ -24,9 +24,12 @@ import {
 } from "node-opcua-types";
 
 
-const prefix = "umati"
-const dataPrefix = `${prefix}/json/data/urn:SampleServer-node-opcua`
-const metaPrefix = `${prefix}/json/metadata/urn:SampleServer-node-opcua`
+const prefix = "basyskom"
+const dataPrefix = `${prefix}/json/machines/data/urn:SampleServer-node-opcua`
+const metaPrefix = `${prefix}/json/machines/metadata/urn:SampleServer-node-opcua`
+
+// const dataPrefix = `${prefix}/json/data/urn:SampleServer-node-opcua`
+// const metaPrefix = `${prefix}/json/metadata/urn:SampleServer-node-opcua`
 
 
 const createWriterGroup = (name: string, dataSetWriter: MyJsonDataSetWriterDataTypeOptions): MyMqttJsonWriterGroupDataTypeOptions => {
@@ -229,11 +232,11 @@ export const constructMqttJsonPubSubConfiguration = (broker: string) => {
     const opts: PubSubConfigurationDataTypeOptions = {
         connections: [
             createConnection("dataSetWriter1", "PublishedDataSet1", "WriterGroup1", broker, 1),
-            createConnection("dataSetWriter2", "PublishedDataSet2", "WriterGroup2", broker, 2)
+            //createConnection("dataSetWriter2", "PublishedDataSet2", "WriterGroup2", broker, 2)
         ],
         publishedDataSets: [
             createPublishedDataSet1(),
-            createPublishedDataSet2()
+            //createPublishedDataSet2()
         ]
     }
     return new PubSubConfigurationDataType(opts);
