@@ -25,11 +25,7 @@ import {
     FieldMetaDataOptions
 } from "node-opcua-types";
 
-
-
-
-
-export function createFieldEntry(_name: UAString, _builtInType: number): FieldMetaDataOptions 
+export function CreateFieldEntry(_name: UAString, _builtInType: number): FieldMetaDataOptions 
 {
     var _dataType: NodeIdLike;
 
@@ -127,11 +123,8 @@ export function createFieldEntry(_name: UAString, _builtInType: number): FieldMe
     return retVal;
 }
 
-
-
-export function createPublishedData (_attributeId: AttributeIds, _samplingIntervalHint: number, _publishedVariable:string): object 
+export function CreatePublishedData (_attributeId: AttributeIds, _samplingIntervalHint: number, _publishedVariable:string): object 
 {
-
     const retVal: object = 
     {
         attributeId: _attributeId,

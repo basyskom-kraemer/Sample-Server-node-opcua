@@ -23,7 +23,7 @@ import {
     FieldMetaDataOptions
 } from "node-opcua-types";
 
-import { createFieldEntry, createPublishedData } from "./dataset_base";
+import { CreateFieldEntry, CreatePublishedData } from "./dataset_base";
 
 
 
@@ -46,18 +46,18 @@ export const createWwFullIdentificationDataSet = (): PublishedDataSetDataTypeOpt
         // }
 
         // Define full woodworking IDENTIFICATION nodes
-        createFieldEntry("AssetIdNode", DataType.String),
-        createFieldEntry("DeviceClassNode", DataType.String),
-        createFieldEntry("HardwareRevNode", DataType.String),
-        createFieldEntry("LocationNode", DataType.String),
-        createFieldEntry("LocationGpsNode", DataType.String),
-        createFieldEntry("LocationPlantNode", DataType.String),
-        createFieldEntry("ManufacturerUriNode", DataType.String),
-        createFieldEntry("ProductCodeNode", DataType.String),
-        createFieldEntry("ProductInstanceUriNode", DataType.String),
-        createFieldEntry("SerialNumberNode", DataType.String),
-        createFieldEntry("SoftwareRevisionNode", DataType.String),
-        createFieldEntry("YearOfConstructionNode", DataType.UInt16),
+        CreateFieldEntry("AssetIdNode", DataType.String),
+        CreateFieldEntry("DeviceClassNode", DataType.String),
+        CreateFieldEntry("HardwareRevNode", DataType.String),
+        CreateFieldEntry("LocationNode", DataType.String),
+        CreateFieldEntry("LocationGpsNode", DataType.String),
+        CreateFieldEntry("LocationPlantNode", DataType.String),
+        CreateFieldEntry("ManufacturerUriNode", DataType.String),
+        CreateFieldEntry("ProductCodeNode", DataType.String),
+        CreateFieldEntry("ProductInstanceUriNode", DataType.String),
+        CreateFieldEntry("SerialNumberNode", DataType.String),
+        CreateFieldEntry("SoftwareRevisionNode", DataType.String),
+        CreateFieldEntry("YearOfConstructionNode", DataType.UInt16),
     ]
 
     const publishedData = [
@@ -73,18 +73,18 @@ export const createWwFullIdentificationDataSet = (): PublishedDataSetDataTypeOpt
         // }
 
         // Set full woodworking IDENTIFICATION nodes
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6026`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6018`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6029`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6031`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6032`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6033`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6034`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6036`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6021`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6022`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6037`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6023`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6026`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6018`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6029`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6031`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6032`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6033`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6034`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6036`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6021`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6022`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6037`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6023`),
     ]
 
     const publishedDataSet: PublishedDataSetDataTypeOptions = {
@@ -118,32 +118,32 @@ export const createWwFullFlagsDataSet = (): PublishedDataSetDataTypeOptions => {
         // }
 
         // Define full woodworking FLAGS nodes
-        createFieldEntry("AirPresent", DataType.Boolean),
-        createFieldEntry("Alarm", DataType.Boolean),
-        createFieldEntry("Calibrated", DataType.Boolean),
-        createFieldEntry("DustChipSuction", DataType.Boolean),
-        createFieldEntry("Emergency", DataType.Boolean),
-        createFieldEntry("EnergySafing", DataType.Boolean),
-        createFieldEntry("Error", DataType.Boolean),
-        createFieldEntry("ExternalEmergency", DataType.Boolean),
-        createFieldEntry("FeedRuns", DataType.Boolean),
-        createFieldEntry("Hold", DataType.Boolean),
-        createFieldEntry("LoadingEnabled", DataType.Boolean),
-        createFieldEntry("MachineInit", DataType.Boolean),
-        createFieldEntry("MachineOn", DataType.Boolean),
-        createFieldEntry("MaintananceRequired", DataType.Boolean),
-        createFieldEntry("ManualActivityRequired", DataType.Boolean),
-        createFieldEntry("Moving", DataType.Boolean),
-        createFieldEntry("PowerPresent", DataType.Boolean),
-        createFieldEntry("RecipeInHold", DataType.Boolean),
-        createFieldEntry("RecipeInRun", DataType.Boolean),
-        createFieldEntry("RecipeInSetup", DataType.Boolean),
-        createFieldEntry("Remote", DataType.Boolean),
-        createFieldEntry("Safety", DataType.Boolean),
-        createFieldEntry("WaitLoad", DataType.Boolean),
-        createFieldEntry("WaitUnload", DataType.Boolean),
-        createFieldEntry("Warning", DataType.Boolean),
-        createFieldEntry("WorkpiecePresent", DataType.Boolean),
+        CreateFieldEntry("AirPresent", DataType.Boolean),
+        CreateFieldEntry("Alarm", DataType.Boolean),
+        CreateFieldEntry("Calibrated", DataType.Boolean),
+        CreateFieldEntry("DustChipSuction", DataType.Boolean),
+        CreateFieldEntry("Emergency", DataType.Boolean),
+        CreateFieldEntry("EnergySafing", DataType.Boolean),
+        CreateFieldEntry("Error", DataType.Boolean),
+        CreateFieldEntry("ExternalEmergency", DataType.Boolean),
+        CreateFieldEntry("FeedRuns", DataType.Boolean),
+        CreateFieldEntry("Hold", DataType.Boolean),
+        CreateFieldEntry("LoadingEnabled", DataType.Boolean),
+        CreateFieldEntry("MachineInit", DataType.Boolean),
+        CreateFieldEntry("MachineOn", DataType.Boolean),
+        CreateFieldEntry("MaintananceRequired", DataType.Boolean),
+        CreateFieldEntry("ManualActivityRequired", DataType.Boolean),
+        CreateFieldEntry("Moving", DataType.Boolean),
+        CreateFieldEntry("PowerPresent", DataType.Boolean),
+        CreateFieldEntry("RecipeInHold", DataType.Boolean),
+        CreateFieldEntry("RecipeInRun", DataType.Boolean),
+        CreateFieldEntry("RecipeInSetup", DataType.Boolean),
+        CreateFieldEntry("Remote", DataType.Boolean),
+        CreateFieldEntry("Safety", DataType.Boolean),
+        CreateFieldEntry("WaitLoad", DataType.Boolean),
+        CreateFieldEntry("WaitUnload", DataType.Boolean),
+        CreateFieldEntry("Warning", DataType.Boolean),
+        CreateFieldEntry("WorkpiecePresent", DataType.Boolean),
     ]
 
     const publishedData = [
@@ -159,32 +159,32 @@ export const createWwFullFlagsDataSet = (): PublishedDataSetDataTypeOptions => {
         // }
 
         // Set full woodworking FLAGS nodes
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6048`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6039`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6040`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6049`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6041`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6050`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6042`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6051`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6052`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6053`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6054`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6043`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6044`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6055`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6056`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6057`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6045`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6058`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6046`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6059`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6060`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6061`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6062`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6063`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6047`),
-        createPublishedData(AttributeIds.Value, 1000, `${nodeId};i=6064`)
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6048`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6039`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6040`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6049`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6041`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6050`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6042`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6051`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6052`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6053`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6054`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6043`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6044`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6055`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6056`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6057`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6045`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6058`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6046`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6059`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6060`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6061`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6062`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6063`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6047`),
+        CreatePublishedData(AttributeIds.Value, 1000, `${nodeId};i=6064`)
     ]
 
     const publishedDataSet: PublishedDataSetDataTypeOptions = {

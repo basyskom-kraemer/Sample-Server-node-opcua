@@ -23,8 +23,8 @@ import {
     FieldMetaDataOptions
 } from "node-opcua-types";
 import { 
-    createWwBasicIdentificationDataSet, 
-    createWwBasicFlagsDataSet 
+    CreateWwBasicIdentificationDataSet, 
+    CreateWwBasicFlagsDataSet 
 } from "./ww_basic_dataset"
 import { 
     createWwFullIdentificationDataSet, 
@@ -44,8 +44,8 @@ export const constructWoodWorkingPubSubConfiguration = (broker: string) => {
             createConnection("PublishedFullWoodWorking", "PublishedFullWoodWorking", "full_woodworking", "identification", broker, 3)
         ],
         publishedDataSets: [
-            createWwBasicIdentificationDataSet(),
-            createWwBasicFlagsDataSet(),
+            CreateWwBasicIdentificationDataSet(),
+            CreateWwBasicFlagsDataSet(),
             createWwFullIdentificationDataSet(),
             createWwFullFlagsDataSet()
         ]
