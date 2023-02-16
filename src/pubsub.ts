@@ -25,8 +25,11 @@ import {
 
 
 const prefix = "basyskom"
-const dataPrefix = `${prefix}/json/machines/data/urn:SampleServer-node-opcua`
-const metaPrefix = `${prefix}/json/machines/metadata/urn:SampleServer-node-opcua`
+//const dataPrefix = `${prefix}/json/machines`
+//const metaPrefix = `${prefix}/json/machines/metadata`
+const dataPrefix = `${prefix}/json/machines`
+const metadataPrefix = `${prefix}/json/machines`
+
 
 // const dataPrefix = `${prefix}/json/data/urn:SampleServer-node-opcua`
 // const metaPrefix = `${prefix}/json/metadata/urn:SampleServer-node-opcua`
@@ -76,8 +79,10 @@ const createConnection = (name: string, dataSetName: string, writerGroupName: st
             // requestedDeliveryGuarantee?: BrokerTransportQualityOfService;
             // metaDataQueueName?: UAString;
             // metaDataUpdateTime?: Double;
-            queueName: `${dataPrefix}/${writerGroupName}/VariableDataSetWriter`,
-            metaDataQueueName: `${metaPrefix}/${writerGroupName}/VariableDataSetWriter`,
+            queueName: `${dataPrefix}/${writerGroupName}/identification`,
+            metaDataQueueName: `${metadataPrefix}/${writerGroupName}/identification`,
+            // queueName: `${dataPrefix}/${writerGroupName}/VariableDataSetWriter`,
+            // metaDataQueueName: `${metaPrefix}/${writerGroupName}/VariableDataSetWriter`,
             metaDataUpdateTime: 5000
         },
     };
@@ -102,7 +107,7 @@ const createConnection = (name: string, dataSetName: string, writerGroupName: st
 }
 
 
-const createPublishedDataSet1 = (): PublishedDataSetDataTypeOptions => {
+const createBasicWoodWorkingDataSet = (): PublishedDataSetDataTypeOptions => {
 
     const fields: FieldMetaDataOptions[] = [
         // {
@@ -118,15 +123,36 @@ const createPublishedDataSet1 = (): PublishedDataSetDataTypeOptions => {
         //     properties?: KeyValuePairOptions[] | null;
         // }
         {
-            name: "MyHistoricalSetpointVar",
-            builtInType: DataType.Double,
-            dataType: resolveNodeId("Double"),
+            name: "DeviceClass",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
         },
         {
-            name: "MyHistoricalVar",
-            builtInType: DataType.Double,
-            dataType: resolveNodeId("Double"),
+            name: "Manufactor",
+            builtInType: DataType.LocalizedText,
+            dataType: resolveNodeId("LocalizedText"),
         },
+        {
+            name: "Model",
+            builtInType: DataType.LocalizedText,
+            dataType: resolveNodeId("LocalizedText"),
+        },
+        {
+            name: "ProductInstanceUri",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "SerialNumber",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "YearOfConstruction",
+            builtInType: DataType.UInt16,
+            dataType: resolveNodeId("UInt16"),
+        }
+
     ]
 
     const publishedData = [
@@ -143,17 +169,37 @@ const createPublishedDataSet1 = (): PublishedDataSetDataTypeOptions => {
         {
             attributeId: AttributeIds.Value,
             samplingIntervalHint: 1000,
-            publishedVariable: `ns=1;i=1321`,
+            publishedVariable: `ns=34;i=6001`,
         },
         {
             attributeId: AttributeIds.Value,
             samplingIntervalHint: 1000,
-            publishedVariable: `ns=1;i=1320`,
+            publishedVariable: `ns=34;i=6002`,
         },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6003`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6004`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6005`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6006`,
+        }
     ]
 
     const publishedDataSet: PublishedDataSetDataTypeOptions = {
-        name: "PublishedDataSet1",
+        name: "PublishedBasicWoodWorking",
         dataSetMetaData: {
             fields: fields,
         },
@@ -165,7 +211,7 @@ const createPublishedDataSet1 = (): PublishedDataSetDataTypeOptions => {
 }
 
 
-const createPublishedDataSet2 = (): PublishedDataSetDataTypeOptions => {
+const createFullWoodWorkingDataSet = (): PublishedDataSetDataTypeOptions => {
 
     const fields: FieldMetaDataOptions[] = [
         // {
@@ -180,16 +226,67 @@ const createPublishedDataSet2 = (): PublishedDataSetDataTypeOptions => {
         //     dataSetFieldId?: Guid;
         //     properties?: KeyValuePairOptions[] | null;
         // }
+
         {
-            name: "MyVar",
-            builtInType: DataType.Double,
-            dataType: resolveNodeId("Double"),
+            name: "AssetIdNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
         },
         {
-            name: "normalStateNode",
-            builtInType: DataType.Double,
-            dataType: resolveNodeId("Number"),
+            name: "DeviceClassNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
         },
+        {
+            name: "HardwareRevNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "LocationNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "LocationGpsNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "LocationPlantNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "ManufacturerUriNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "ProductCodeNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "ProductInstanceUriNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "SerialNumberNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "SoftwareRevisionNode",
+            builtInType: DataType.String,
+            dataType: resolveNodeId("String"),
+        },
+        {
+            name: "YearOfConstructionNode",
+            builtInType: DataType.UInt16,
+            dataType: resolveNodeId("UInt16"),
+        }
     ]
 
     const publishedData = [
@@ -206,17 +303,67 @@ const createPublishedDataSet2 = (): PublishedDataSetDataTypeOptions => {
         {
             attributeId: AttributeIds.Value,
             samplingIntervalHint: 1000,
-            publishedVariable: `ns=1;i=1032`,
+            publishedVariable: `ns=34;i=6026`,
         },
         {
             attributeId: AttributeIds.Value,
             samplingIntervalHint: 1000,
-            publishedVariable: `ns=1;i=1068`,
+            publishedVariable: `ns=34;i=6018`,
         },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6029`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6031`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6032`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6033`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6034`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6036`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6021`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6022`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6037`,
+        },
+        {
+            attributeId: AttributeIds.Value,
+            samplingIntervalHint: 1000,
+            publishedVariable: `ns=34;i=6023`,
+        }
     ]
 
     const publishedDataSet: PublishedDataSetDataTypeOptions = {
-        name: "PublishedDataSet2",
+        name: "PublishedFullWoodWorking",
         dataSetMetaData: {
             fields: fields,
         },
@@ -231,12 +378,12 @@ const createPublishedDataSet2 = (): PublishedDataSetDataTypeOptions => {
 export const constructMqttJsonPubSubConfiguration = (broker: string) => {
     const opts: PubSubConfigurationDataTypeOptions = {
         connections: [
-            createConnection("dataSetWriter1", "PublishedDataSet1", "WriterGroup1", broker, 1),
-            //createConnection("dataSetWriter2", "PublishedDataSet2", "WriterGroup2", broker, 2)
+            createConnection("dataSet_BasicWoodWorking", "PublishedBasicWoodWorking", "basic_woodworking", broker, 1),
+            createConnection("dataSet_FullWoodWorking", "PublishedFullWoodWorking", "full_woodworking", broker, 2)
         ],
         publishedDataSets: [
-            createPublishedDataSet1(),
-            //createPublishedDataSet2()
+            createBasicWoodWorkingDataSet(),
+            createFullWoodWorkingDataSet()
         ]
     }
     return new PubSubConfigurationDataType(opts);
