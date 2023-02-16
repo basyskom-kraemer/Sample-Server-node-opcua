@@ -49,7 +49,7 @@ export const createWoodWorkingFullLogic = async (addressSpace: AddressSpace): Pr
     const flCalibratedNode = addressSpace?.findNode('ns=34;i=6040') as UAVariable;
     const flDustChipSuctionNode = addressSpace?.findNode('ns=34;i=6049') as UAVariable;
     const flEmergencyNode = addressSpace?.findNode('ns=34;i=6041') as UAVariable;
-    const flEnergySafingNode = addressSpace?.findNode('ns=34;i=60340') as UAVariable;
+    const flEnergySafingNode = addressSpace?.findNode('ns=34;i=6050') as UAVariable;
     const flErrorNode = addressSpace?.findNode('ns=34;i=6042') as UAVariable;
     const flExternalEmergencyNode = addressSpace?.findNode('ns=34;i=6051') as UAVariable;
     const flFeedRunsNode = addressSpace?.findNode('ns=34;i=6052') as UAVariable;

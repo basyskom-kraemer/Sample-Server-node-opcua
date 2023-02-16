@@ -20,7 +20,8 @@ import {
 } from 'node-opcua';
 
 import { installPubSub } from "node-opcua-pubsub-server";
-import { constructMqttJsonPubSubConfiguration } from "./pubsub"
+//import { constructMqttJsonPubSubConfiguration } from "./pubsub"
+import { constructWoodWorkingPubSubConfiguration } from "./pubsub/pubsub_base"
 
 import { green, yellow, red } from './utils/log';
 import { config } from './config';
@@ -79,7 +80,8 @@ const startUp = async (server: OPCUAServer): Promise<void> => {
     await createAddressSpace(server);
     server.engine.addressSpace?.installAlarmsAndConditionsService();
     installPubSub( server, {
-      configuration: constructMqttJsonPubSubConfiguration("mqtt://localhost:1883"),
+      //configuration: constructMqttJsonPubSubConfiguration("mqtt://localhost:1883"),
+      configuration: constructWoodWorkingPubSubConfiguration("mqtt://localhost:1883"),
     })
     await startUp(server);
   } catch (error) {
