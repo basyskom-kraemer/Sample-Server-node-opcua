@@ -44,7 +44,7 @@ export const createWoodWorkingFullLogic = async (addressSpace: AddressSpace): Pr
     const flYearOfConstructionNode = addressSpace?.findNode('ns=34;i=6023') as UAVariable;
 
     // Define full "fl..." woodworking STATE - MACHINE -FLAGS nodes
-    const flAairPresentNode = addressSpace?.findNode('ns=34;i=6048') as UAVariable;
+    const flAirPresentNode = addressSpace?.findNode('ns=34;i=6048') as UAVariable;
     const flAlarmNode = addressSpace?.findNode('ns=34;i=6039') as UAVariable;
     const flCalibratedNode = addressSpace?.findNode('ns=34;i=6040') as UAVariable;
     const flDustChipSuctionNode = addressSpace?.findNode('ns=34;i=6049') as UAVariable;
@@ -147,7 +147,7 @@ export const createWoodWorkingFullLogic = async (addressSpace: AddressSpace): Pr
         let rndm5 = getRandomArbitrary(rndmMin, rndmMax);
 
         // Set full woodworking STATE - MACHINE -FLAGS nodes
-        flAairPresentNode?.setValueFromSource({ dataType: DataType.Boolean, value: (rndm < 100 ? false : true) });
+        flAirPresentNode?.setValueFromSource({ dataType: DataType.Boolean, value: (rndm < 100 ? false : true) });
         flAlarmNode?.setValueFromSource({ dataType: DataType.Boolean, value: (rndm < 450 ? false : true) });
         flCalibratedNode?.setValueFromSource({ dataType: DataType.Boolean, value: (rndm < 310 ? false : true) });
         flDustChipSuctionNode?.setValueFromSource({ dataType: DataType.Boolean, value: (rndm < 200 ? false : true) });
